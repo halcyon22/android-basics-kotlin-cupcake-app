@@ -19,6 +19,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SummaryFragment">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.cupcake.OrderViewModel" />
+    </data>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -52,6 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
+                    android:text="@{viewModel.quantity.toString()}"
                     tools:text="6 cupcakes" />
 
                 <View
@@ -74,6 +81,7 @@
                     style="@style/Widget.Cupcake.TextView.OrderSummary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="@{viewModel.flavor}"
                     android:layout_marginTop="@dimen/order_summary_margin"
                     tools:text="Chocolate" />
 
@@ -94,6 +102,7 @@
 
                 <TextView
                     android:id="@+id/date"
+                    android:text="@{viewModel.pickupDate}"
                     style="@style/Widget.Cupcake.TextView.OrderSummary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
