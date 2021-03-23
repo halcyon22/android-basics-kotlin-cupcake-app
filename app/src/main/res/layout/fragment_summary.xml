@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
      Copyright (C) 2020 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -85,8 +84,8 @@
                     style="@style/Widget.Cupcake.TextView.OrderSummary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{viewModel.flavor}"
                     android:layout_marginTop="@dimen/order_summary_margin"
+                    android:text="@{viewModel.flavor}"
                     tools:text="Chocolate" />
 
                 <View
@@ -106,11 +105,11 @@
 
                 <TextView
                     android:id="@+id/date"
-                    android:text="@{viewModel.pickupDate}"
                     style="@style/Widget.Cupcake.TextView.OrderSummary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/order_summary_margin"
+                    android:text="@{viewModel.pickupDate}"
                     tools:text="Sunday" />
 
                 <View
@@ -123,23 +122,32 @@
 
                 <TextView
                     android:id="@+id/total"
-                    android:text="@{@string/total_price(viewModel.total)}"
                     style="@style/Widget.Cupcake.TextView.FinalPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="@dimen/side_margin"
+                    android:text="@{@string/total_price(viewModel.total)}"
                     tools:text="Total $5.00" />
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/send_button"
-                android:onClick="@{() -> fragment.sendOrder()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/side_margin"
+                android:onClick="@{() -> fragment.sendOrder()}"
                 android:text="@string/send" />
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_between_elements"
+                android:onClick="@{() -> fragment.cancelOrder()}"
+                style="?attr/materialButtonOutlinedStyle"
+                android:text="@string/cancel" />
 
         </LinearLayout>
     </ScrollView>
