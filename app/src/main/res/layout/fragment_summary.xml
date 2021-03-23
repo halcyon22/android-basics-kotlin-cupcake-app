@@ -21,6 +21,10 @@
 
     <data>
         <variable
+            name="fragment"
+            type="com.example.cupcake.SummaryFragment" />
+
+        <variable
             name="viewModel"
             type="com.example.cupcake.OrderViewModel" />
     </data>
@@ -119,6 +123,7 @@
 
                 <TextView
                     android:id="@+id/total"
+                    android:text="@{@string/total_price(viewModel.total)}"
                     style="@style/Widget.Cupcake.TextView.FinalPrice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -130,6 +135,7 @@
 
             <Button
                 android:id="@+id/send_button"
+                android:onClick="@{() -> fragment.sendOrder()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/side_margin"

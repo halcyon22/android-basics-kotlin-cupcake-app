@@ -50,21 +50,14 @@ class PickupFragment : Fragment() {
         binding?.apply {
             lifecycleOwner = viewLifecycleOwner
             viewModel = sharedViewModel
-            nextButton.setOnClickListener { goToNextScreen() }
+            binding?.fragment = this@PickupFragment
         }
     }
 
-    /**
-     * Navigate to the next screen to see the order summary.
-     */
     fun goToNextScreen() {
         findNavController().navigate(R.id.action_pickupFragment_to_summaryFragment)
     }
 
-    /**
-     * This fragment lifecycle method is called when the view hierarchy associated with the fragment
-     * is being removed. As a result, clear out the binding object.
-     */
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
